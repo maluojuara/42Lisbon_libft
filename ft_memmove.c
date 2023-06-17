@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcosta-d <mcosta-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 19:27:03 by mcosta-d          #+#    #+#             */
-/*   Updated: 2023/04/23 20:04:50 by mcosta-d         ###   ########.fr       */
+/*   Created: 2023/04/23 17:17:03 by mcosta-d          #+#    #+#             */
+/*   Updated: 2023/05/10 23:19:10 by mcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *lit, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	b;
-	size_t	l;
+	size_t			i;
 
-	if (ft_strlen(lit) == 0)
-		return ((char *)big);
-	b = 0;
-	while (b < len && big[b])
+	if (dest == NULL && src == NULL)
+		return (0);
+	i = 0;
+	if (dest <= src)
 	{
-		l = 0;
-		while (lit[l] && (big[b + l] == lit[l]) && ((b + l) < len))
-			l++;
-		if (lit[l] == '\0')
-			return ((char *)&big[b]);
-		b++;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
 	}
-	return (NULL);
+	else
+	{
+		i = n - 1;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i--;
+		}
+	}
+	return (dest);
 }
+
+/*essa sobrepoe, enquanto memcpy nao sobrepoe*/

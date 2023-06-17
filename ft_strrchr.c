@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcosta-d <mcosta-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 12:20:36 by mcosta-d          #+#    #+#             */
-/*   Updated: 2023/04/23 20:26:40 by mcosta-d         ###   ########.fr       */
+/*   Created: 2023/04/23 19:00:04 by mcosta-d          #+#    #+#             */
+/*   Updated: 2023/05/10 23:23:55 by mcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *ptr, size_t n)
+char	*ft_strrchr(const char *str, int c)
 {
-	ft_memset(ptr, 0, n);
+	int	i;
+
+	i = ft_strlen(str);
+	if ((unsigned char)c == '\0')
+		return ((char *)&str[i]);
+	while (i >= 0)
+	{
+		if ((unsigned char)str[i] == (unsigned char)c)
+			return ((char *)&str[i]);
+		i--;
+	}
+	return (NULL);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-    char str[20] = "Hello, world!";
-	printf ("Before ft_bzero: %s \n", str);
-    ft_bzero(str, 1);
-    printf("After ft_bzero: %s\n", str);
-
-    char str2[20] = "Hello, world!";
-	printf ("Before bzero: %s \n", str2);
-    bzero(str2, 1);
-    printf("Using bzero: %s\n", str2);
-
-    return 0;
-}
-*/
