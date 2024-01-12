@@ -1,5 +1,12 @@
 # Libft
 
+ [![Intro](https://img.shields.io/badge/Cursus-Libft-success?style=for-the-badge&logo=42)](https://github.com/maluojuara/libft)
+ 
+ [![Stars](https://img.shields.io/github/stars/maluojuara/libft?color=ffff00&label=Stars&logo=Stars&style=?style=flat)](https://github.com/maluojuara/libft)
+ [![Size](https://img.shields.io/github/repo-size/maluojuara/libft?color=blue&label=Size&logo=Size&style=?style=flat)](https://github.com/maluojuara/libft)
+ [![Lines of code](https://img.shields.io/tokei/lines/github/maluojuara/libft?color=blueviolet)](https://github.com/maluojuara/libft)
+ [![Activity](https://img.shields.io/github/last-commit/maluojuara/libft?color=red&label=Last%20Commit&style=flat)](https://github.com/maluojuara/libft)
+
 Libft is the first project of the school 42.
 
 The instructions were given in the [subject](https://github.com/bshintak/Libft/blob/master/subject_libft.pdf).
